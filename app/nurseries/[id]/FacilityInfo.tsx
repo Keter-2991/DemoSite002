@@ -173,7 +173,7 @@ export default function FacilityInfo({ nurseryId }: { nurseryId: string }) {
               {Object.entries(data.capacity).map(([age, count]) => (
                 <div key={age} className="flex justify-between items-center py-3 border-b border-gray-100 last:border-0">
                   <span className="text-gray-700 font-medium">{age}</span>
-                  <span className="text-teal-600 font-bold text-lg">{count}</span>
+                  <span className="text-teal-600 font-bold text-lg">{count as string}</span>
                 </div>
               ))}
               <div className="flex justify-between items-center pt-4 border-t-2 border-teal-500">
