@@ -19,18 +19,19 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function NurseryDetailPage({ params }: { params: { id: string } }) {
+export default async function NurseryDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <DirectorMessage nurseryId={params.id} />
-      <FeaturesSection nurseryId={params.id} />
-      <DailyLifeSection nurseryId={params.id} />
-      <DailySchedule nurseryId={params.id} />
-      <FacilityInfo nurseryId={params.id} />
-      <NewsSection nurseryId={params.id} />
-      <ComplaintsSection nurseryId={params.id} />
-      <AnnualEvents nurseryId={params.id} />
+      <DirectorMessage nurseryId={id} />
+      <FeaturesSection nurseryId={id} />
+      <DailyLifeSection nurseryId={id} />
+      <DailySchedule nurseryId={id} />
+      <FacilityInfo nurseryId={id} />
+      <NewsSection nurseryId={id} />
+      <ComplaintsSection nurseryId={id} />
+      <AnnualEvents nurseryId={id} />
     </div>
   );
 }
